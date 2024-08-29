@@ -1,0 +1,739 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>UNIT - 2</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ffe5fb7b-e14a-42c7-ad6e-b3c5f3c62b6e" class="page sans"><header><h1 class="page-title">UNIT - 2</h1><p class="page-description"></p></header><div class="page-body"><h3 id="5fe4ced4-e6c8-40ea-9b4b-5e5c6db4abfd" class="">Sequential Synchronous Machine Design</h3><p id="b2f7014a-96aa-4569-bf65-3bd13d5e9f00" class=""><strong>Sequential synchronous machine design</strong> involves creating circuits that change states in synchronization with a clock signal. This type of design is fundamental in digital systems, particularly for implementing finite state machines (FSMs).</p><h3 id="3524580f-5f56-49ab-b8cc-452f501200cf" class="">Moore and Mealy Machines</h3><p id="f7589514-f623-4144-826d-a2f80c72561e" class=""><strong>Moore and Mealy machines</strong> are two types of finite state machines (FSMs) used in digital design:</p><ol type="1" id="47159455-1593-4779-9d1a-3a6c7e9a43e0" class="numbered-list" start="1"><li><strong>Moore Machine</strong>:<ul id="2c1d751b-2748-4842-b4ab-4cc431222a78" class="bulleted-list"><li style="list-style-type:disc">The output depends solely on the current state.</li></ul><ul id="0d23b84b-30ac-4005-852e-771e232ba6dc" class="bulleted-list"><li style="list-style-type:disc">Outputs are updated only at clock edges, resulting in a synchronous design.</li></ul><ul id="0241a822-5964-472f-aa20-11b085f152f5" class="bulleted-list"><li style="list-style-type:disc">Typically, easier to design and debug because the output is directly tied to states.</li></ul><p id="a5b7f477-d6fd-4377-aafe-79a98d202e23" class=""><strong>Example:</strong></p><ul id="4bdd2bda-a920-4daf-bc07-7588649e7926" class="bulleted-list"><li style="list-style-type:disc">If a system is in <code>STATE_A</code>, output is <code>0</code>. If in <code>STATE_B</code>, output is <code>1</code>.</li></ul></li></ol><ol type="1" id="70309a94-ebb4-414b-8118-94f88a968e1e" class="numbered-list" start="2"><li><strong>Mealy Machine</strong>:<ul id="a2fca774-58cc-4554-bc32-6f228486f0d3" class="bulleted-list"><li style="list-style-type:disc">The output depends on both the current state and the current inputs.</li></ul><ul id="cafc24c3-b8c6-43ff-ac68-66244645fa45" class="bulleted-list"><li style="list-style-type:disc">Outputs can change immediately in response to input changes, leading to faster response times but potentially more complex designs.</li></ul><p id="a0234ed5-44cf-4ad1-bf5b-80200207f1db" class=""><strong>Example:</strong></p><ul id="2f73aae4-5d7b-49e8-a424-92bbb7c00f95" class="bulleted-list"><li style="list-style-type:disc">In <code>STATE_A</code>, if input <code>X</code> is <code>1</code>, output is <code>0</code>; if <code>X</code> is <code>0</code>, output is <code>1</code>.</li></ul></li></ol><p id="fb188e60-7b76-4d03-b444-cc18401de24c" class=""><strong>HDL Code for Machines</strong>:</p><ul id="f0760cf9-7a62-4c96-93c6-ea5cb98716c4" class="bulleted-list"><li style="list-style-type:disc"><strong>Moore Machine in VHDL</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7e724dbc-d136-45dc-be67-6db06d196e2b" class="code"><code class="language-VHDL" style="white-space:pre-wrap;word-break:break-all">type state_type is (STATE_A, STATE_B);
+signal state : state_type := STATE_A;
+signal output_signal : std_logic;
+
+process (clk)
+begin
+  if rising_edge(clk) then
+    case state is
+      when STATE_A =&gt;
+        output_signal &lt;= &#x27;0&#x27;;
+        if input_signal = &#x27;1&#x27; then
+          state &lt;= STATE_B;
+        end if;
+      when STATE_B =&gt;
+        output_signal &lt;= &#x27;1&#x27;;
+        if input_signal = &#x27;0&#x27; then
+          state &lt;= STATE_A;
+        end if;
+      when others =&gt;
+        state &lt;= STATE_A;
+    end case;
+  end if;
+end process;
+</code></pre></li></ul><ul id="a5ab750f-1b0d-4e40-8175-316217c807d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Mealy Machine in Verilog</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="02907a6b-9cae-4a92-bb8f-567d909efda4" class="code"><code class="language-Verilog" style="white-space:pre-wrap;word-break:break-all">module mealy_fsm(
+    input clk,
+    input reset,
+    input in,
+    output reg out
+);
+
+reg [1:0] state;
+parameter STATE_A = 2&#x27;b00, STATE_B = 2&#x27;b01;
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        state &lt;= STATE_A;
+        out &lt;= 0;
+    end else begin
+        case (state)
+            STATE_A: begin
+                if (in)
+                    state &lt;= STATE_B;
+                out &lt;= 0;
+            end
+            STATE_B: begin
+                if (!in)
+                    state &lt;= STATE_A;
+                out &lt;= 1;
+            end
+            default: state &lt;= STATE_A;
+        endcase
+    end
+end
+
+endmodule
+</code></pre></li></ul><h3 id="dcfbd069-f12e-46e0-94f5-3a70421f1527" class="">FIFO (First In, First Out)</h3><p id="dfdabc5d-59b4-4829-9dec-a679e3b541a9" class=""><strong>FIFO (First In, First Out)</strong> is a type of data structure used to buffer data between systems with different processing speeds. It allows data to be written into it at one rate and read out at another, typically using synchronous or asynchronous read and write clocks.</p><ul id="856b8a89-ecbb-4f01-b6a8-6f5aa4a21f6a" class="bulleted-list"><li style="list-style-type:disc"><strong>Synchronous FIFO</strong>: Both read and write operations occur on the same clock edge.</li></ul><ul id="5d59990f-8232-4d81-9555-db5908029556" class="bulleted-list"><li style="list-style-type:disc"><strong>Asynchronous FIFO</strong>: Read and write operations occur on different clocks.</li></ul><h3 id="7f2b4bcd-5a21-4f4e-8213-d16d733812b7" class="">Metastability and Solutions</h3><p id="2b4f484c-9cff-41c8-95b4-436bb9dfa4ed" class=""><strong>Metastability</strong> is a phenomenon that occurs when a flip-flop or latch fails to settle into a stable state within the expected time due to asynchronous inputs or setup and hold time violations. This can lead to unpredictable behavior in digital circuits.</p><p id="9aed6003-e4ee-43f6-b2a9-a889d1d41c9c" class=""><strong>Solutions to Metastability</strong>:</p><ol type="1" id="d52d1d6f-68ab-4d98-817f-3ac12a92d6f3" class="numbered-list" start="1"><li><strong>Synchronizers</strong>: Use two or more flip-flops in series to synchronize the asynchronous input with the clock domain. This reduces the probability of metastability.</li></ol><ol type="1" id="c32ca0b8-aeee-48cd-bac6-34b2b7f9c0be" class="numbered-list" start="2"><li><strong>Metastability-Hardened Flip-Flops</strong>: Use flip-flops designed with higher setup and hold margins.</li></ol><ol type="1" id="ea4ddee2-f6e5-4aa9-9f40-8033805cf670" class="numbered-list" start="3"><li><strong>Proper Timing Design</strong>: Ensure that data paths are designed with enough setup and hold times to meet the flip-flop requirements.</li></ol><h3 id="9983cf9c-e509-48c9-bd93-ac8d196ef9eb" class="">Noise Margin</h3><p id="0ba56fd0-6da4-4591-96d7-dd895acc4899" class=""><strong>Noise margin</strong> refers to the tolerance of a digital circuit to noise on its input signals. It is the difference between the input voltage levels that a circuit recognizes as logic high and low:</p><ul id="fd3a53e4-f1e9-4520-81d4-53a1a96e34a8" class="bulleted-list"><li style="list-style-type:disc"><strong>Noise Margin High (NMH)</strong>: The difference between the minimum output high voltage of a driving gate and the minimum input high voltage required by a receiving gate.</li></ul><ul id="c705b4e9-d3bf-4a94-ba1d-ba4fdfb535b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Noise Margin Low (NML)</strong>: The difference between the maximum output low voltage of a driving gate and the maximum input low voltage required by a receiving gate.</li></ul><h3 id="f9cd3f46-0cbc-4f1b-996a-ea7e75169bcb" class="">Fan-out</h3><p id="a360de2a-461f-465c-832f-aef0a5d0e5b6" class=""><strong>Fan-out</strong> is the number of gate inputs that a single output can drive without degrading performance. It is determined by the driving capability of the output and the input capacitance of the gates being driven.</p><ul id="3a4cd35a-d758-4d59-be71-cc4e3ef76ea2" class="bulleted-list"><li style="list-style-type:disc"><strong>High Fan-out</strong>: Can lead to signal degradation and increased delay due to higher capacitance.</li></ul><ul id="73e7ad28-b559-4b5e-bb3e-91684e434fcd" class="bulleted-list"><li style="list-style-type:disc"><strong>Managing Fan-out</strong>: Use buffer stages to drive high fan-out or split the load across multiple drivers.</li></ul><h3 id="85408baa-00e9-470d-8aaf-ad8432bc4867" class="">Skew</h3><p id="ba545ea3-a3fe-4476-903a-de36bc7d863f" class=""><strong>Skew</strong> is the difference in arrival times of a clock signal at different parts of a digital circuit. It can be caused by variations in path lengths, loads, or manufacturing processes.</p><ul id="80a8d377-7a71-440d-b972-36c6b421a0da" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Skew</strong>: Affects the timing of sequential circuits and can lead to setup or hold time violations.</li></ul><ul id="bf58a454-0ad5-4bc2-b061-6fbfa3d255d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Skew</strong>: Can cause incorrect data to be latched.</li></ul><p id="e878cd99-e52d-49c3-957e-ae26617e0063" class=""><strong>Reducing Skew</strong>:</p><ol type="1" id="f340d87c-8773-45b6-8b53-39e916901e1e" class="numbered-list" start="1"><li><strong>Clock Tree Synthesis (CTS)</strong>: Optimize the distribution of clock signals to minimize skew.</li></ol><ol type="1" id="33507d57-8a87-4666-9e70-9d2adb028e3d" class="numbered-list" start="2"><li><strong>Matched Path Lengths</strong>: Ensure that critical paths have matched delays.</li></ol><ol type="1" id="e179c8f1-3c79-4456-b861-e540f93ea188" class="numbered-list" start="3"><li><strong>Buffer Insertion</strong>: Use buffers to balance delays.</li></ol><h3 id="1bb13fb6-5312-4334-af93-382eb35137b9" class="">Timing Considerations</h3><p id="87c71eb5-8653-4f7d-b2d8-cfef41a87298" class=""><strong>Timing considerations</strong> involve ensuring that all signals in a digital circuit meet their setup and hold time requirements relative to the clock signal.</p><ul id="8df25ee6-6af0-414c-8716-cb2639cfb29d" class="bulleted-list"><li style="list-style-type:disc"><strong>Setup Time</strong>: The minimum time before the clock edge that the data input must be stable.</li></ul><ul id="c37c5fa6-1704-4cb9-8360-5093729f9740" class="bulleted-list"><li style="list-style-type:disc"><strong>Hold Time</strong>: The minimum time after the clock edge that the data input must remain stable.</li></ul><ul id="84aa6644-a1c4-4de1-8cf4-8ee54da53978" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock-to-Q Delay</strong>: The time from the clock edge to the output of a flip-flop changing state.</li></ul><h3 id="f894b394-0bc0-46da-970d-5d5d160655e7" class="">Hazards</h3><p id="3e43a57e-6f35-41f0-a802-a2fc368636cc" class=""><strong>Hazards</strong> are unwanted switching transients that can occur in digital circuits due to delays in signal propagation.</p><ul id="2a9283b1-2398-45dd-b8fb-4ae74700d0cf" class="bulleted-list"><li style="list-style-type:disc"><strong>Static Hazard</strong>: Occurs when a circuit output momentarily changes when it should remain constant.</li></ul><ul id="677a57a7-8fc2-4236-b4d5-3e46d5805dad" class="bulleted-list"><li style="list-style-type:disc"><strong>Dynamic Hazard</strong>: Occurs when an output changes more than once when it should change only once.</li></ul><ul id="6e9835f9-1e5e-41eb-b3d7-81a879f2a1e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Eliminating Hazards</strong>: Use redundant logic or design techniques that ensure consistent timing.</li></ul><h3 id="7c8b2c06-de95-4de6-aa61-cdad1d6234d1" class="">Clock Distribution</h3><p id="a1fe29d3-1ff8-4371-99a2-aaf2ee25466d" class=""><strong>Clock distribution</strong> is the process of delivering the clock signal to all parts of a digital circuit. Proper clock distribution ensures that all parts of the circuit operate in synchrony.</p><ul id="860520bf-0aae-46c4-b2c3-39bc065df12d" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Tree</strong>: A hierarchical network of buffers and interconnects designed to distribute the clock signal evenly across the circuit.</li></ul><ul id="c4a93e10-19c3-4d34-99aa-60fe4c2dd83e" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Mesh</strong>: A network of interconnects that evenly distribute the clock signal across the entire chip.</li></ul><h3 id="13e2c7e9-c4dd-4e37-8d53-bef9c1c6e30a" class="">Clock Jitter</h3><p id="82fc92c4-39a0-4def-9316-bfb5aa00bc99" class=""><strong>Clock jitter</strong> is the variation in clock signal edges from their ideal positions over time. It can cause timing errors and reduce system performance.</p><ul id="08b18b88-90c4-4d21-9d8f-c3871381982f" class="bulleted-list"><li style="list-style-type:disc"><strong>Sources of Jitter</strong>: Power supply noise, temperature variations, electromagnetic interference (EMI).</li></ul><ul id="ae75883f-17fc-40d1-be04-9fec95761cf8" class="bulleted-list"><li style="list-style-type:disc"><strong>Reducing Jitter</strong>: Use low-jitter clock sources, minimize noise coupling, and optimize power distribution.</li></ul><h3 id="c996ee59-2d2f-43cb-a61c-25b597e1c8fe" class="">Supply and Ground Bounce</h3><ul id="db0e2a84-562c-4d31-8f54-756dbc339fba" class="bulleted-list"><li style="list-style-type:disc"><strong>Supply Bounce</strong>: Variations in the supply voltage due to sudden changes in current consumption, leading to noise on the power supply line.</li></ul><ul id="00f97865-2264-4c1d-9d44-a02386549409" class="bulleted-list"><li style="list-style-type:disc"><strong>Ground Bounce</strong>: Noise on the ground line caused by simultaneous switching of multiple outputs, creating a temporary voltage difference between different ground points.</li></ul><p id="5df1b36f-fa62-4f92-afc6-f27d81857094" class=""><strong>Mitigating Bounce</strong>:</p><ol type="1" id="9332f4e9-c089-49d4-873c-6c6f9ee2ef9c" class="numbered-list" start="1"><li><strong>Decoupling Capacitors</strong>: Use capacitors to filter out high-frequency noise.</li></ol><ol type="1" id="780681cf-14ea-48c9-b304-d15a3551187c" class="numbered-list" start="2"><li><strong>Power and Ground Planes</strong>: Use separate power and ground planes in PCB design to minimize inductance and resistance.</li></ol><ol type="1" id="09483476-4aa7-4600-a233-b523306a2540" class="numbered-list" start="3"><li><strong>Controlled Slew Rates</strong>: Limit the speed of signal transitions to reduce noise generation.</li></ol><h3 id="59fe127b-26da-4be7-97cc-f8c0be766759" class="">Power Distribution Techniques</h3><p id="e46e0016-b532-4196-83f0-fc2004a3ec28" class=""><strong>Power distribution techniques</strong> ensure that all parts of a digital circuit receive a stable power supply with minimal noise and voltage drop.</p><ul id="0b43a9df-a05f-41e8-9b5c-f72f4dab6090" class="bulleted-list"><li style="list-style-type:disc"><strong>Power Grids</strong>: A network of power and ground lines that distribute power evenly across the chip.</li></ul><ul id="28fdeee9-4b93-4d72-a37a-30bb987b5f4d" class="bulleted-list"><li style="list-style-type:disc"><strong>Decoupling Capacitors</strong>: Placed near power pins to filter out high-frequency noise.</li></ul><ul id="f189ede8-8429-4451-894f-c1e39109bfed" class="bulleted-list"><li style="list-style-type:disc"><strong>Power Gating</strong>: A technique that shuts off power to inactive parts of the circuit to reduce power consumption.</li></ul><h3 id="1d13a859-41f0-48c1-8783-46fa8390e10e" class="">Power Optimization</h3><p id="e4c58459-e4d3-4c9c-af00-6f4beef90d83" class=""><strong>Power optimization</strong> aims to reduce power consumption in digital circuits without compromising performance. Techniques include:</p><ol type="1" id="385d49b7-4bf4-448e-977a-a112318c61f6" class="numbered-list" start="1"><li><strong>Dynamic Voltage and Frequency Scaling (DVFS)</strong>: Adjusting the supply voltage and clock frequency based on the workload.</li></ol><ol type="1" id="a3ced9f3-bb0a-4e4b-b8d2-8aabb368fd22" class="numbered-list" start="2"><li><strong>Clock Gating</strong>: Disabling the clock signal to inactive parts of the circuit.</li></ol><ol type="1" id="ecc499d4-29a5-45ca-8ef6-3939fc1f72d8" class="numbered-list" start="3"><li><strong>Multi-Threshold CMOS (MTCMOS)</strong>: Using transistors with different threshold voltages to balance speed and power.</li></ol><ol type="1" id="b0ca84e1-f590-4ea0-b3da-7b5ef6451090" class="numbered-list" start="4"><li><strong>Power Domains</strong>: Creating separate power regions that can be independently powered down.</li></ol><h3 id="98489e38-534b-46ed-916c-9393ceff03f5" class="">Interconnect Routing Techniques</h3><p id="4c4e678d-d2cb-4a77-9b47-e3ba4553ba22" class=""><strong>Interconnect routing</strong> involves determining the physical paths that signals take between components on a chip or PCB.</p><ul id="a3c9eb9f-7663-44eb-a429-520a28c9f921" class="bulleted-list"><li style="list-style-type:disc"><strong>Wire Length Minimization</strong>: Reducing the length of interconnects to minimize delay and power consumption.</li></ul><ul id="3f8d5eef-9588-438e-8fe3-1e559a4f5c6d" class="bulleted-list"><li style="list-style-type:disc"><strong>Routing Layers</strong>: Using multiple layers of metal interconnects to reduce congestion and improve signal integrity.</li></ul><ul id="1f342a60-6188-4c0c-80b3-5e165731ddda" class="bulleted-list"><li style="list-style-type:disc"><strong>Shielding</strong>: Placing grounded lines next to critical signals to reduce crosstalk and noise.</li></ul><h3 id="d778bdb9-c092-4e96-95cc-39c3d2157ae1" class="">Wire Parasitics</h3><p id="96a45e30-761e-4e56-8825-ea7b50e8cba0" class=""><strong>Wire parasitics</strong> are the unwanted resistance, capacitance, and inductance associated with interconnects. They can affect signal integrity and timing.</p><ul id="06d5a50e-7d83-43c7-9b6a-0714b163b0e1" class="bulleted-list"><li style="list-style-type:disc"><strong>Resistance (R)</strong>: Causes voltage drops and power dissipation.</li></ul><ul id="535064cd-285e-42bd-a544-cb6d55d861f8" class="bulleted-list"><li style="list-style-type:disc"><strong>Capacitance (C)</strong>: Causes signal delay</li></ul><p id="3483c3bd-acea-4fb2-b566-cae8173a7316" class="">and affects switching speed.</p><ul id="c63119c1-5db3-48e7-be38-2b4113420fae" class="bulleted-list"><li style="list-style-type:disc"><strong>Inductance (L)</strong>: Causes signal overshoot and ringing.</li></ul><p id="cc2eef58-d68f-47f2-aa8c-af01963efe42" class=""><strong>Managing Wire Parasitics</strong>:</p><ol type="1" id="8aa1f042-1902-4aa6-aab8-60f179e0c5cb" class="numbered-list" start="1"><li><strong>Minimize Wire Lengths</strong>: Reduces resistance and capacitance.</li></ol><ol type="1" id="39c7a9cc-a38e-46ee-8236-a521d5045a56" class="numbered-list" start="2"><li><strong>Use Wider Traces</strong>: Reduces resistance.</li></ol><ol type="1" id="5286e79a-f57c-496d-9426-9c4fd6b4cbc8" class="numbered-list" start="3"><li><strong>Reduce Capacitance</strong>: Increase spacing between lines.</li></ol><h3 id="0bae7741-006e-4c2d-b395-720622f2893b" class="">Signal Integrity Issues</h3><p id="90623567-cf76-4782-8ce6-d2c39166d041" class=""><strong>Signal integrity</strong> refers to the quality of a digital signal as it travels through a circuit. Poor signal integrity can cause errors and reduce performance.</p><ul id="2afbc8dd-1528-4229-8046-bd2a19738e9d" class="bulleted-list"><li style="list-style-type:disc"><strong>Crosstalk</strong>: Unwanted coupling between adjacent signal lines.</li></ul><ul id="79ce77f7-d87b-4566-8db3-e97e518b04c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Reflection</strong>: Occurs when a signal encounters a change in impedance, causing it to reflect back.</li></ul><ul id="00599858-ef4a-4434-8fc3-5d86060ecb7e" class="bulleted-list"><li style="list-style-type:disc"><strong>Attenuation</strong>: Signal weakening over distance due to resistance and capacitance.</li></ul><h3 id="13f58f04-f164-4def-8f2a-7b207ca98110" class="">I/O Architecture</h3><p id="70db7193-64e4-4c0f-a760-17962dc09198" class=""><strong>I/O architecture</strong> refers to the design of input/output interfaces in a digital system. It involves managing data transfer between the system and external devices.</p><ul id="f6426574-7638-4695-aab4-951001436ffc" class="bulleted-list"><li style="list-style-type:disc"><strong>Types of I/O</strong>: Parallel, serial, memory-mapped, and peripheral-mapped I/O.</li></ul><ul id="44c3b85a-4ce5-4462-a996-b1d3ae16ce06" class="bulleted-list"><li style="list-style-type:disc"><strong>Buffers</strong>: Used to temporarily store data during transfers to manage different data rates and prevent data loss.</li></ul><ul id="3b229002-1969-4fb1-aa0a-b8887a88cb00" class="bulleted-list"><li style="list-style-type:disc"><strong>Bus Arbitration</strong>: Ensures that multiple devices can share the same communication bus without conflicts.</li></ul><ul id="7dc0b469-1d01-4c45-a4c1-d69684c0ff21" class="bulleted-list"><li style="list-style-type:disc"><strong>Interrupts</strong>: Allows devices to signal the processor when they need attention, improving efficiency.</li></ul><p id="01a57b36-e644-43fc-bae6-559daefb6e7e" class="">Understanding these concepts is crucial for designing reliable and efficient digital systems, particularly in high-performance and real-time applications where timing, power, and signal integrity are critical.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
