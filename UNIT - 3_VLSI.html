@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>UNIT - 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e33d5828-c278-4781-a055-6fd81c1864a3" class="page sans"><header><h1 class="page-title">UNIT - 3</h1><p class="page-description"></p></header><div class="page-body"><h3 id="83a7d0a2-92a2-4052-80d3-3d5d1047c2d1" class="">Design Flow for Digital Systems (CPLD/FPGA)</h3><p id="2d0f5111-e6da-4954-9275-ed76cabad080" class="">The design flow for digital systems, such as CPLDs (Complex Programmable Logic Devices) and FPGAs (Field Programmable Gate Arrays), involves several stages:</p><ol type="1" id="2a5bf1a9-74df-45f2-9635-9c7484142483" class="numbered-list" start="1"><li><strong>Specification</strong>: Define the system requirements and specifications.</li></ol><ol type="1" id="6ff6654c-9ea2-40b9-8426-7d6c8f87e7c2" class="numbered-list" start="2"><li><strong>Design Entry</strong>: Create the design using HDLs (Hardware Description Languages) like VHDL or Verilog, or using schematic capture.</li></ol><ol type="1" id="6d28da4d-e0a2-49a6-b74e-5312e17ac6eb" class="numbered-list" start="3"><li><strong>Simulation</strong>: Verify the functionality of the design through simulation to ensure that the logic behaves as expected.</li></ol><ol type="1" id="c66496ee-f874-4d6e-a1a9-906f867cbce7" class="numbered-list" start="4"><li><strong>Synthesis</strong>: Convert the high-level HDL design into a gate-level netlist.</li></ol><ol type="1" id="9753ad72-0cf8-4869-827d-d3a11b57a9a1" class="numbered-list" start="5"><li><strong>Implementation</strong>: Map the synthesized design onto the device, perform placement and routing.</li></ol><ol type="1" id="b8ced49d-a499-4603-b2cc-8e494601d141" class="numbered-list" start="6"><li><strong>Verification</strong>: Perform post-implementation simulation and static timing analysis to verify the design’s functionality and timing.</li></ol><ol type="1" id="65b636b9-289b-441f-ba94-9233bcc638d9" class="numbered-list" start="7"><li><strong>Programming</strong>: Load the final design into the CPLD or FPGA.</li></ol><ol type="1" id="5cd1ab14-c12a-4ab6-b563-2ec097ec8541" class="numbered-list" start="8"><li><strong>Testing</strong>: Test the programmed device in the actual hardware environment.</li></ol><h3 id="3cd7b42e-7c6f-437a-918d-d8b2715ee362" class="">CPLD Architecture, Features, Specifications, Applications</h3><h3 id="c037573a-6796-4a63-98e2-2c9a7107c0ec" class=""><strong>CPLD Architecture</strong></h3><p id="27e0b2f7-ff6b-4bec-83f3-1be748d5f1de" class="">CPLDs consist of a set of programmable logic blocks (or macrocells) that are connected via a programmable interconnect. The architecture typically includes:</p><ul id="26bab9de-01aa-4162-bf03-84474e405c7d" class="bulleted-list"><li style="list-style-type:disc"><strong>Macrocells</strong>: These are the building blocks of CPLDs that contain a combination of combinational and sequential logic (flip-flops, registers).</li></ul><ul id="ffecfa89-6ac8-4523-9930-632adc4c331a" class="bulleted-list"><li style="list-style-type:disc"><strong>Interconnect Matrix</strong>: A programmable network that connects the macrocells and allows for flexible routing of signals.</li></ul><ul id="c345173f-c621-4599-b37f-0a4544b12809" class="bulleted-list"><li style="list-style-type:disc"><strong>I/O Blocks</strong>: Interface logic that connects internal logic to external pins.</li></ul><h3 id="8e34e950-9e0a-430a-aec4-7c423441e97d" class=""><strong>Features</strong></h3><ul id="36b87802-c910-4643-a184-7907e3fa04e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Non-volatile</strong>: Retain their configuration without power, allowing instant-on functionality.</li></ul><ul id="bd64f498-4827-4a42-901c-155cd9502960" class="bulleted-list"><li style="list-style-type:disc"><strong>Fixed Logic Resources</strong>: Deterministic timing characteristics because of the fixed number of logic gates and predictable interconnect delays.</li></ul><ul id="4e5627a5-58a3-4ee2-95cf-9148e3d479de" class="bulleted-list"><li style="list-style-type:disc"><strong>Lower Logic Density</strong>: Suitable for simpler designs.</li></ul><ul id="40902a11-901d-451c-a0c1-3b3e181e6c14" class="bulleted-list"><li style="list-style-type:disc"><strong>Fast Timing</strong>: Due to less routing delay and predictable timing, CPLDs are ideal for applications requiring fast response times.</li></ul><h3 id="5ee4f003-59c7-42e2-92ad-337534fd4697" class=""><strong>Specifications</strong></h3><ul id="749d7e25-1d7b-401e-a510-050a662210e5" class="bulleted-list"><li style="list-style-type:disc"><strong>Number of Macrocells</strong>: Ranges typically from 32 to 512.</li></ul><ul id="2e366185-c3f8-414c-9ec7-5f4ba7bfe9f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Operating Frequency</strong>: Can operate at frequencies up to hundreds of MHz.</li></ul><ul id="cc7bd45f-d4b0-4d85-a1fd-db9eb2a85718" class="bulleted-list"><li style="list-style-type:disc"><strong>Logic Elements</strong>: Each macrocell can implement small logic functions.</li></ul><ul id="39214fd2-45b9-4b2f-a12e-344756c3cdda" class="bulleted-list"><li style="list-style-type:disc"><strong>I/O Pins</strong>: Number of input/output pins varies depending on the CPLD model.</li></ul><h3 id="936aebf1-5ce8-477f-8e06-a9933d05445b" class=""><strong>Applications</strong></h3><ul id="b94c2b5b-9a86-477a-a2e6-8da4fe3f5c4e" class="bulleted-list"><li style="list-style-type:disc"><strong>Simple Control Circuits</strong>: State machines, I/O interfaces.</li></ul><ul id="4569e6cb-6628-4ae0-a119-8050dc0efe46" class="bulleted-list"><li style="list-style-type:disc"><strong>Glue Logic</strong>: Logic that connects different parts of a digital system.</li></ul><ul id="ffa6cd42-4b7f-4f76-8068-c9f2c040b849" class="bulleted-list"><li style="list-style-type:disc"><strong>Decoders and Encoders</strong>: For addressing and data manipulation.</li></ul><ul id="a2954ef4-bac6-43d8-aa71-cf987f5b4ce4" class="bulleted-list"><li style="list-style-type:disc"><strong>Timers and Counters</strong>: Simple timing applications.</li></ul><h3 id="29e39e91-cb73-469d-9e06-b120ec6b3ae6" class="">FPGA Architecture, Features, Specifications, Applications</h3><h3 id="2ae79f3e-1bcc-4ae2-9c7c-75a27ec570e9" class=""><strong>FPGA Architecture</strong></h3><p id="1b345c90-a7a4-42a5-ac4b-302a12ee0e5e" class="">FPGAs are composed of an array of configurable logic blocks (CLBs), programmable interconnects, and I/O blocks.</p><ul id="bc084719-1396-4195-bd59-ba422afd72ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Configurable Logic Blocks (CLBs)</strong>: The core components that perform logic operations. They contain look-up tables (LUTs), flip-flops, and multiplexers.</li></ul><ul id="f8778d48-8bea-42ca-8e9c-01ee1c887f88" class="bulleted-list"><li style="list-style-type:disc"><strong>Programmable Interconnects</strong>: Allow for flexible routing between CLBs and I/O blocks.</li></ul><ul id="4c8cc731-26aa-400a-a4cb-2d66253a1b64" class="bulleted-list"><li style="list-style-type:disc"><strong>I/O Blocks</strong>: Provide a programmable interface between the FPGA and external circuitry.</li></ul><ul id="28de5b2b-f076-4416-b33f-c807a3b6f0e3" class="bulleted-list"><li style="list-style-type:disc"><strong>Dedicated Resources</strong>: Often include dedicated resources like block RAM, DSP slices, and clock management units (PLLs, MMCMs).</li></ul><h3 id="5b139c4d-18cd-46ce-a3e5-932f1c8cad88" class=""><strong>Features</strong></h3><ul id="4d9454b4-d158-4a80-8790-5267d04cff37" class="bulleted-list"><li style="list-style-type:disc"><strong>Reconfigurable</strong>: Can be reprogrammed multiple times to implement different functionalities.</li></ul><ul id="142ae74a-6ab7-4ab4-8f79-d708fbd3c476" class="bulleted-list"><li style="list-style-type:disc"><strong>High Logic Density</strong>: Supports complex designs with millions of logic gates.</li></ul><ul id="0eaa717c-5973-4ac7-8d93-c183b3e40f40" class="bulleted-list"><li style="list-style-type:disc"><strong>Parallel Processing</strong>: Capable of performing multiple operations in parallel, enhancing performance.</li></ul><ul id="233fa5b9-d9d6-48b3-9645-8351e440a707" class="bulleted-list"><li style="list-style-type:disc"><strong>Scalable</strong>: Range from low-cost devices to high-performance FPGAs.</li></ul><ul id="75d26ce9-cb78-4518-a6cb-a4274202cfc0" class="bulleted-list"><li style="list-style-type:disc"><strong>Mixed-signal</strong>: Some FPGAs support analog functions (e.g., ADCs, DACs).</li></ul><h3 id="e44222c9-646b-4184-aae7-a488374624ba" class=""><strong>Specifications</strong></h3><ul id="a920686c-692a-4c44-af01-932088c49c49" class="bulleted-list"><li style="list-style-type:disc"><strong>Logic Cells</strong>: Can range from a few thousand to several million logic cells.</li></ul><ul id="5d9bf992-efe1-4e95-b7d9-58e0bc716751" class="bulleted-list"><li style="list-style-type:disc"><strong>Operating Frequency</strong>: Can operate at frequencies up to 500 MHz or higher, depending on the FPGA model.</li></ul><ul id="ffb489aa-116f-4ebe-a8a8-cb75238b83e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Memory</strong>: Includes block RAM, distributed RAM, FIFO blocks.</li></ul><ul id="8ab18e87-9905-44f5-9165-9e2992213cab" class="bulleted-list"><li style="list-style-type:disc"><strong>Dedicated DSP Slices</strong>: Optimized for high-speed mathematical operations, used in signal processing.</li></ul><ul id="60b3bc62-705a-4b35-aa32-9ebfbd1194e3" class="bulleted-list"><li style="list-style-type:disc"><strong>I/O Standards</strong>: Support multiple I/O standards for interfacing with other devices (e.g., LVDS, LVCMOS).</li></ul><h3 id="54d68e70-7b9e-4557-9f00-c63174ecb889" class=""><strong>Applications</strong></h3><ul id="a594dceb-cea9-4468-a992-d022ed0c0abd" class="bulleted-list"><li style="list-style-type:disc"><strong>Digital Signal Processing (DSP)</strong>: Used in audio, video, and communication systems.</li></ul><ul id="b278431c-db04-40d1-8412-54cc2d0792ba" class="bulleted-list"><li style="list-style-type:disc"><strong>Communications</strong>: Implementing high-speed data transmission protocols.</li></ul><ul id="96fa9978-6418-4823-9ca8-277bdcccc3fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Embedded Systems</strong>: Soft-core processors like MicroBlaze or Nios II can be implemented in FPGAs.</li></ul><ul id="1024466e-27c4-4d19-aa2e-e8ee01982075" class="bulleted-list"><li style="list-style-type:disc"><strong>Prototyping</strong>: Used for rapid prototyping of digital systems.</li></ul><ul id="f408bdca-a762-40b3-9f49-1772df993ee1" class="bulleted-list"><li style="list-style-type:disc"><strong>AI and Machine Learning</strong>: Acceleration of algorithms in AI applications.</li></ul><h3 id="2a3c3401-3636-4981-b847-a19342da3428" class="">Clock Management Techniques</h3><p id="0e7de7f2-5206-4206-adfb-76386aef4bb0" class="">Clock management is crucial in CPLD and FPGA designs to ensure reliable and efficient operation of digital systems. Common techniques include:</p><ul id="32d7cc5d-d4c4-4ecf-8b63-e16fa45d8065" class="bulleted-list"><li style="list-style-type:disc"><strong>Phase-Locked Loops (PLLs)</strong>: Used to multiply, divide, or phase shift clock signals. They help in generating different clock frequencies and maintaining synchronization.</li></ul><ul id="b72e5c18-3597-4971-9cc8-ef562aa2b1e0" class="bulleted-list"><li style="list-style-type:disc"><strong>Delay-Locked Loops (DLLs)</strong>: Provide fine-tuning of clock delays to align clock edges precisely.</li></ul><ul id="a93c099d-a565-421f-8a16-5e699153554a" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Buffers</strong>: Distribute the clock signal with minimal skew and jitter.</li></ul><ul id="89900821-3ee1-4ebb-add0-814437deb9f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Gating</strong>: Disables the clock signal to certain parts of the circuit to save power.</li></ul><ul id="2e51830d-c805-4c09-969a-62c99e49249f" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Dividers</strong>: Create slower clocks by dividing the main clock frequency.</li></ul><ul id="27360797-6900-4f5f-a674-1a0c7806a201" class="bulleted-list"><li style="list-style-type:disc"><strong>Clock Multiplexers</strong>: Switch between different clock sources based on design requirements.</li></ul><h3 id="6e8b183c-f4f9-41cb-9f56-36a5472d30b0" class="">Simulation and Synthesis Tools</h3><h3 id="f60b0932-c250-4da7-9d12-01f41192fa8a" class=""><strong>Simulation Tools</strong></h3><ul id="3e3a044c-9a9e-431d-8c04-54f0a7748a26" class="bulleted-list"><li style="list-style-type:disc"><strong>ModelSim, XSIM, VCS</strong>: Used for simulating HDL code to verify the logic design functionality before implementation.</li></ul><ul id="790e0ccc-589b-4b9a-ad4e-18b8370e8866" class="bulleted-list"><li style="list-style-type:disc"><strong>Testbenches</strong>: Scripts or code written to test the design under various conditions.</li></ul><h3 id="80505ab2-1708-4b47-8ad0-e540a16cc12c" class=""><strong>Synthesis Tools</strong></h3><ul id="c13639fd-1be5-4a2a-b58a-a6267fa6726f" class="bulleted-list"><li style="list-style-type:disc"><strong>Xilinx Vivado, Intel Quartus, Synopsys Synplify</strong>: Convert HDL code into a gate-level netlist suitable for FPGA or CPLD implementation.</li></ul><ul id="aa105e15-b2e5-4a74-a3fb-b49e22acf672" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimizations</strong>: Tools perform optimizations for speed, area, and power to meet design constraints.</li></ul><h3 id="ef011391-cdc5-4bbc-9c5d-a1226e4541b1" class="">FPGA Synthesis and Implementation</h3><ul id="7b2feaca-f9f5-4b94-a99a-83ace2609284" class="bulleted-list"><li style="list-style-type:disc"><strong>Synthesis</strong>: Converts HDL code to a gate-level representation.</li></ul><ul id="6d8e10cb-c49d-48ef-86c3-f4182c70e3dc" class="bulleted-list"><li style="list-style-type:disc"><strong>Mapping</strong>: Maps the synthesized netlist to the available resources on the FPGA.</li></ul><ul id="c52d7949-a631-4029-9b33-50e0e9c9426d" class="bulleted-list"><li style="list-style-type:disc"><strong>Placement and Routing</strong>: Places the logic blocks and routes the interconnects on the FPGA.</li></ul><ul id="d19e3155-06c8-47e6-952b-79791d08aea1" class="bulleted-list"><li style="list-style-type:disc"><strong>Bitstream Generation</strong>: Creates the binary file (bitstream) that programs the FPGA.</li></ul><h3 id="f18122fc-3e21-43f6-bc5b-faa737bdbe87" class="">Comparison of CPLD &amp; FPGA</h3><table id="3a451168-5c55-4ad0-a9fa-de4335d63fdb" class="simple-table"><tbody><tr id="a53c2190-b693-4373-b5da-512d92154fe0"><td id="X`Uw" class="">Feature</td><td id="Zdvd" class="">CPLD</td><td id="gq;y" class="">FPGA</td></tr><tr id="af0509a2-671b-45f8-a181-77393af099e6"><td id="X`Uw" class=""><strong>Configuration</strong></td><td id="Zdvd" class="">Non-volatile</td><td id="gq;y" class="">Volatile, SRAM-based</td></tr><tr id="72528c11-9673-4f82-af72-ed2d346476de"><td id="X`Uw" class=""><strong>Logic Density</strong></td><td id="Zdvd" class="">Lower (10s to 100s of macrocells)</td><td id="gq;y" class="">Higher (up to millions of logic cells)</td></tr><tr id="d4bd439b-31c2-489a-b526-24936db66c14"><td id="X`Uw" class=""><strong>Architecture</strong></td><td id="Zdvd" class="">Simple, predictable timing</td><td id="gq;y" class="">Complex, flexible, suitable for large designs</td></tr><tr id="c1994792-4208-45e5-97ae-ea5dcace9e91"><td id="X`Uw" class=""><strong>Reconfiguration</strong></td><td id="Zdvd" class="">Limited, typically one-time programmable</td><td id="gq;y" class="">Reconfigurable, can be programmed multiple times</td></tr><tr id="7e60a9a9-ca0a-49c5-b884-f16fd19ff525"><td id="X`Uw" class=""><strong>Power</strong></td><td id="Zdvd" class="">Generally lower power consumption</td><td id="gq;y" class="">Higher power consumption due to more resources</td></tr><tr id="969b8996-b0c7-44e8-8b68-5a7102543f89"><td id="X`Uw" class=""><strong>Speed</strong></td><td id="Zdvd" class="">Faster for simple logic due to fixed routing</td><td id="gq;y" class="">Potentially slower for simple tasks due to flexible routing but faster for parallel operations</td></tr><tr id="61048c88-3dd4-46d2-ad11-e16bb9bf0cbf"><td id="X`Uw" class=""><strong>Cost</strong></td><td id="Zdvd" class="">Lower, suitable for simpler applications</td><td id="gq;y" class="">Higher, suitable for complex applications</td></tr><tr id="2875681e-1f95-4b22-b69a-5a53f549b3b2"><td id="X`Uw" class=""><strong>Applications</strong></td><td id="Zdvd" class="">Glue logic, simple control circuits</td><td id="gq;y" class="">DSP, embedded systems, communication, AI/ML</td></tr></tbody></table><p id="3008f62e-45c2-42b0-beaf-053622893e12" class="">CPLDs are typically used for simpler, low-density applications that require predictable timing and lower power consumption. In contrast, FPGAs are preferred for more complex, high-density applications that benefit from parallel processing and reconfigurability.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>UNIT - 6</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0109090a-ca37-432b-8c73-562c1a54dbc3" class="page sans"><header><h1 class="page-title">UNIT - 6</h1><p class="page-description"></p></header><div class="page-body"><h3 id="a7a5e284-3a4b-44a1-bfe0-273c9adf9b79" class="">Types of Faults in Digital Circuits</h3><p id="e3a4cf7a-7771-48c7-872a-ac1129084c8d" class="">Faults in digital circuits are unintended discrepancies between the designed and actual behavior of the circuit. They can occur due to various reasons, such as manufacturing defects, environmental conditions, or wear and tear. Understanding different types of faults is crucial for designing effective testing strategies. The main types of faults include:</p><ol type="1" id="f76a86ad-8efa-4b31-9f26-fb43b96b6e5d" class="numbered-list" start="1"><li><strong>Stuck-at Faults</strong>: A common fault model where a signal line (node) in a circuit is permanently stuck at a logic ‘0’ (stuck-at-0) or logic ‘1’ (stuck-at-1), irrespective of the input values.</li></ol><ol type="1" id="c833e78a-b85e-4215-beb9-70d99913c090" class="numbered-list" start="2"><li><strong>Bridging Faults</strong>: Occur when two or more signal lines that should be electrically isolated are unintentionally connected due to a short circuit, leading to incorrect logic values.</li></ol><ol type="1" id="bf407b54-1cbd-4c28-9e15-b525b82a8dcf" class="numbered-list" start="3"><li><strong>Open Faults</strong>: Happen when a connection that should be present in the circuit is missing, leading to an undefined or floating state on the affected node.</li></ol><ol type="1" id="dcdc9864-0a05-4944-b850-5963f547b71f" class="numbered-list" start="4"><li><strong>Delay Faults</strong>: These faults occur when signals are delayed beyond acceptable limits, which can cause timing violations and incorrect operation in synchronous circuits. Delay faults can be categorized into gate delay faults and path delay faults.</li></ol><ol type="1" id="2de6a541-9bf7-4304-a1e6-244db0168505" class="numbered-list" start="5"><li><strong>Transition Faults</strong>: A type of delay fault that assumes a fault causes a slow-to-rise (0→1) or slow-to-fall (1→0) transition, affecting the timing of the signal transitions.</li></ol><ol type="1" id="15439e06-2e29-4218-9a4b-4cbd8d93f455" class="numbered-list" start="6"><li><strong>Multiple Faults</strong>: Involve the occurrence of more than one fault simultaneously, making it difficult to isolate and test each fault separately.</li></ol><h3 id="0e004f1e-342b-42b6-8138-54165fdfb8d9" class="">Need for Design for Testability (DFT)</h3><p id="eee2920b-cad5-4b7b-a9f3-358c78e34512" class="">Design for Testability (DFT) refers to the practice of designing circuits with testability as a key consideration. The goal of DFT is to make the circuit easier to test, thus ensuring high reliability and quality by detecting faults early in the design and manufacturing process.</p><p id="c34a66fb-e83f-493d-855c-60159f40b544" class=""><strong>Why DFT is Needed:</strong></p><ul id="a06637fe-a0dc-4508-8473-faecd39da81c" class="bulleted-list"><li style="list-style-type:disc"><strong>Fault Detection</strong>: DFT techniques help detect and diagnose faults efficiently, ensuring defective products are identified before they reach the customer.</li></ul><ul id="2a3e69d0-a740-4336-82b8-319e511c9a3c" class="bulleted-list"><li style="list-style-type:disc"><strong>Test Coverage</strong>: Improves the ability to achieve high test coverage, which is crucial for detecting all possible faults in a circuit.</li></ul><ul id="04e9415b-6fab-4fba-a8c9-b523a007b0c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost Reduction</strong>: By improving testability, DFT reduces the time and effort needed for testing, thereby lowering the overall cost associated with testing and debugging.</li></ul><ul id="8442e4f1-8590-445f-aea3-ba74fa8d97d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Yield Improvement</strong>: Helps identify and isolate manufacturing defects, improving the yield of the fabrication process.</li></ul><ul id="086397e9-6d71-4f80-b9cb-b710b8934cc5" class="bulleted-list"><li style="list-style-type:disc"><strong>Maintainability</strong>: Enhances the ease of maintenance and repair by facilitating the quick identification of faulty components or sections in a circuit.</li></ul><h3 id="f3fce1b6-c158-46e5-bd33-2c8729868c78" class="">DFT Guidelines</h3><p id="ffc86355-1518-42d7-bb84-0150aa27dd20" class="">DFT guidelines are best practices for designing circuits that are easier to test:</p><ol type="1" id="7c842a2c-a281-4e36-8214-d57eca5d7e93" class="numbered-list" start="1"><li><strong>Control and Observability</strong>: Ensure that internal nodes can be controlled (set to specific values) and observed (measured) during testing. This is typically achieved using scan chains or test points.</li></ol><ol type="1" id="d91e01e0-508d-4248-a42e-3628569f3d7e" class="numbered-list" start="2"><li><strong>Scan Design</strong>: Incorporate scan chains by replacing flip-flops with scan flip-flops, which allow sequential elements to be controlled and observed via a shift register mechanism.</li></ol><ol type="1" id="4324ed49-cd13-4ddd-b8bb-d87c996ae772" class="numbered-list" start="3"><li><strong>Built-In Self-Test (BIST)</strong>: Embed test logic within the circuit to enable self-testing without external equipment. BIST generates test patterns and analyzes the results internally.</li></ol><ol type="1" id="86c7236a-cc71-4350-8903-380f72fb774b" class="numbered-list" start="4"><li><strong>Boundary Scan</strong>: Implement boundary scan cells compliant with JTAG (Joint Test Action Group) standards to test interconnections between chips on a PCB.</li></ol><ol type="1" id="07cb08ad-0623-4236-a050-f338b7423c76" class="numbered-list" start="5"><li><strong>Controllability and Observability</strong>: Design circuits so that all nodes can be easily set to known states (controllability) and their states can be easily read or measured (observability).</li></ol><h3 id="22e6b1f7-b1c6-46d8-94a7-ffe49ff71ece" class="">Testability</h3><p id="4ad0ca02-f8e4-47c1-a807-f2d892c910be" class="">Testability refers to the ease with which a circuit can be tested to ensure it is free of defects. High testability means faults can be easily detected and diagnosed.</p><ul id="224254e4-0b3b-4569-acff-47fc4590569f" class="bulleted-list"><li style="list-style-type:disc"><strong>Controllability</strong>: The ability to set any internal node or flip-flop to a desired logic value from the primary inputs.</li></ul><ul id="ca44ffdf-fc4e-4773-855a-7bf3e373e3c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Observability</strong>: The ability to observe the state of any internal node or flip-flop from the primary outputs.</li></ul><h3 id="e6215893-8255-4ccf-9731-827b72b019a1" class="">Fault Models</h3><p id="866a6917-ab7d-4eac-8817-f2832c0accbb" class="">Fault models are simplified representations of how faults affect the behavior of digital circuits. They provide a basis for developing testing strategies and algorithms. Common fault models include:</p><ol type="1" id="dfd0ab2c-74ee-4e37-a28e-779b0268ea23" class="numbered-list" start="1"><li><strong>Stuck-at Fault Model</strong>: Assumes a node is permanently stuck at 0 or 1. It is the most widely used fault model due to its simplicity and effectiveness in covering a large percentage of faults.</li></ol><ol type="1" id="d4697a72-81b2-41bc-a559-6c86dca7c74d" class="numbered-list" start="2"><li><strong>Bridging Fault Model</strong>: Assumes that two or more nodes are accidentally connected. The behavior of the circuit depends on the logic levels and types of gates involved.</li></ol><ol type="1" id="ead5ef33-e482-4791-b8c2-f386e74bfd02" class="numbered-list" start="3"><li><strong>Delay Fault Model</strong>: Models faults that cause delays in signal propagation, potentially leading to timing violations. Important for high-speed circuits.</li></ol><ol type="1" id="b28a16f4-0043-42fd-bda6-a3a3c1287f4b" class="numbered-list" start="4"><li><strong>Open Fault Model</strong>: Assumes an open circuit at a node, leading to floating or undefined states. It is particularly relevant in CMOS circuits where transistor gates may float.</li></ol><ol type="1" id="62804a13-092e-43fb-ad68-69ddbfd31373" class="numbered-list" start="5"><li><strong>Transition Fault Model</strong>: Assumes a slow-to-rise or slow-to-fall transition, capturing the effects of timing faults more effectively than stuck-at models.</li></ol><h3 id="bfec7038-df2a-4a18-8993-ade46810bd28" class="">Path Sensitizing</h3><p id="5641abcc-ec2e-4fbd-8c7f-89cf17740ec7" class="">Path sensitizing is a technique used to create test patterns for detecting faults:</p><ul id="08bc92bd-cd73-4858-a7d0-5509f48c8b61" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: To ensure that a test pattern propagates the effect of a fault from the location of the fault to an observable output.</li></ul><ul id="bb000d54-5080-41e3-a402-965c2ed7acc4" class="bulleted-list"><li style="list-style-type:disc"><strong>Process</strong>: Involves selecting a path from the fault site to the output and ensuring the path is active and sensitive to changes caused by the fault. The signal on the path must be controllable and observable without interference from other paths.</li></ul><h3 id="5034a329-af50-4df4-9b10-359324a135a7" class="">Test Pattern Generation</h3><p id="7604cb73-118e-4faf-9dc7-6b219f492a01" class="">Test pattern generation involves creating a set of input vectors that can detect faults in a circuit:</p><ul id="d25209bd-a4e9-4171-9ae0-374697bf4c33" class="bulleted-list"><li style="list-style-type:disc"><strong>Automatic Test Pattern Generation (ATPG)</strong>: Software tools automatically generate test patterns based on the fault models. ATPG tools aim to maximize fault coverage while minimizing the number of test patterns.</li></ul><ul id="f3fff45b-8333-4278-842f-5b85e5358e21" class="bulleted-list"><li style="list-style-type:disc"><strong>Random Pattern Generation</strong>: Generates random input vectors. Effective for detecting random faults but may not achieve high fault coverage for certain fault models.</li></ul><ul id="85843eb3-576e-4232-ab0f-6158c908e7a2" class="bulleted-list"><li style="list-style-type:disc"><strong>Deterministic Pattern Generation</strong>: Generates specific patterns targeting known faults, ensuring high coverage.</li></ul><h3 id="193e5d14-80cb-43fe-bf03-514707207507" class="">Sequential Circuit Test</h3><p id="50be5431-8f38-4e81-98bd-941236e84238" class="">Testing sequential circuits is more challenging than combinational circuits because of their memory elements:</p><ul id="d8595a06-a6c1-4f0a-8047-35f3e6644bda" class="bulleted-list"><li style="list-style-type:disc"><strong>Challenges</strong>: Internal states of flip-flops and latches must be controlled and observed, complicating test pattern generation and application.</li></ul><ul id="9ce1cb0e-d535-4141-acbe-03777e55d0e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Scan Design</strong>: Converts sequential circuits into scan mode, where flip-flops are configured into a shift register to easily control and observe states.</li></ul><ul id="2ec7f4ba-a1b5-4b8f-b421-b9fc24af70c1" class="bulleted-list"><li style="list-style-type:disc"><strong>State Initialization</strong>: Proper initialization of states is crucial to ensure reliable testing of sequential circuits.</li></ul><h3 id="d42807c7-f5c9-4b51-8756-977322bc339e" class="">Built-In Self-Test (BIST)</h3><p id="4946ec9a-fe06-4f3d-929e-081da664bc5b" class="">BIST involves integrating test logic into a circuit to enable self-testing:</p><ul id="d18c7cb9-3c8c-4091-8d33-5e57f688937a" class="bulleted-list"><li style="list-style-type:disc"><strong>Components</strong>: BIST typically includes a pattern generator (e.g., Linear Feedback Shift Register, LFSR), a circuit under test (CUT), and a response analyzer (e.g., Multiple Input Signature Register, MISR).</li></ul><ul id="086381b3-3a29-47fc-9e2d-da061ae4a1a3" class="bulleted-list"><li style="list-style-type:disc"><strong>Advantages</strong>: Reduces the need for external test equipment, lowers testing costs, and allows for in-field testing and diagnostics.</li></ul><ul id="2c5d9f87-e771-49de-a7ac-24dabc65fa52" class="bulleted-list"><li style="list-style-type:disc"><strong>Applications</strong>: Widely used in memory testing, ASICs, and high-reliability applications like aerospace and automotive electronics.</li></ul><h3 id="e06b2782-2796-4aa9-bc1d-af6cc5e49011" class="">JTAG and Boundary Scan</h3><p id="df4c1a9d-43cc-4909-b081-5cb676522d63" class="">JTAG (Joint Test Action Group) is a standard for testing interconnections on printed circuit boards (PCBs):</p><ul id="ec3524d3-03bb-46d9-980d-65195abbcda0" class="bulleted-list"><li style="list-style-type:disc"><strong>Boundary Scan</strong>: A technique that involves adding special cells (boundary scan cells) to the input/output pins of ICs, allowing access to these pins for testing purposes.</li></ul><ul id="656a123b-c184-48d6-981f-f97ec2e5856f" class="bulleted-list"><li style="list-style-type:disc"><strong>TAP Controller</strong>: The Test Access Port (TAP) controller is the state machine that controls the boundary scan operations, including shifting data into and out of the boundary scan register.</li></ul><ul id="561e4a9d-f04b-45ff-b9b7-673f045fd91e" class="bulleted-list"><li style="list-style-type:disc"><strong>Applications</strong>: Used for testing board-level interconnects, programming devices, and debugging during development.</li></ul><h3 id="13d1c8de-87cb-4aa7-b629-7a5c2f6f330e" class="">TAP Controller</h3><p id="b44425b9-53dc-4fdb-b8d3-ad3273a8ea8d" class="">The TAP controller is an integral part of the JTAG standard, managing the operations of boundary scan:</p><ul id="47b747b1-b24b-4578-a719-961b16d309d8" class="bulleted-list"><li style="list-style-type:disc"><strong>States</strong>: The TAP controller has 16 states, including Test-Logic-Reset, Run-Test/Idle, Shift-IR, Shift-DR, and others. These states control the loading, shifting, and capturing of data in the boundary scan cells.</li></ul><ul id="e75bd230-404a-4de8-b13e-f18ff0e0e387" class="bulleted-list"><li style="list-style-type:disc"><strong>Operation</strong>: Through the TAP controller, test instructions are loaded, and data is shifted in and out of the boundary scan chain for testing interconnections and internal circuit functionality.</li></ul><h3 id="80870db4-48da-4bef-8e9a-59a8aae0ed65" class="">Design Issues</h3><ol type="1" id="ea713461-8f4d-469b-bcc4-bd2eb2346538" class="numbered-list" start="1"><li><strong>Antenna Effect</strong>: Charge accumulation on long interconnects during fabrication can damage thin gate oxides. It is mitigated by adding &quot;dummy&quot; vias or connecting paths to reduce accumulated charge.</li></ol><ol type="1" id="1b9f072f-0b9b-43b1-ab16-788d8720b3bc" class="numbered-list" start="2"><li><strong>Electromigration Effect</strong>: The gradual displacement of metal atoms due to high current density, leading to open circuits or increased resistance. Mitigated by designing wider metal lines and using materials with higher electromigration resistance.</li></ol><ol type="1" id="a76e1138-f97f-4781-9939-1b822f24b875" class="numbered-list" start="3"><li><strong>Crosstalk</strong>: Unwanted coupling between adjacent signal lines, causing noise and interference. Reduced by increasing spacing between lines, using shielding, or differential signaling.</li></ol><ol type="1" id="0d6917a2-4b44-4e8e-9234-809e3f8ac32c" class="numbered-list" start="4"><li><strong>Drain Punch Through</strong>: A short-channel effect where the depletion regions of the source and drain merge, allowing current to flow without gate control. Minimized by using lightly doped drains or increasing channel length.</li></ol><h3 id="a9657434-cc2a-44c0-9f66-c9940b6de3c1" class="">Timing Analysis</h3><p id="4ceb8ce3-b013-4321-8bb6-8eaf699ced63" class="">Timing analysis ensures that a circuit meets its timing constraints:</p><ul id="868e86d5-a0f7-4ccd-8160-7f0ed5bff386" class="bulleted-list"><li style="list-style-type:disc"><strong>Static Timing Analysis (STA)</strong>: Evaluates the worst-case timing paths without simulating actual signal behavior. It checks setup and hold times to ensure proper timing margins.</li></ul><ul id="3b918366-ec03-462f-8b1b-c3be87e17a61" class="bulleted-list"><li style="list-style-type:disc"><strong>Dynamic Timing Analysis</strong>: Simulates actual signal propagation through the circuit over time, accounting for all delays and signal interactions.</li></ul><ul id="4c54e157-d40a-4560-adfd-9492e1ec604c" class="bulleted-list"><li style="list-style-type:disc"><strong>Timing Constraints</strong>: Include setup time, hold time, clock skew, and jitter, which are critical for ensuring correct operation of synchronous circuits.</li></ul><p id="358920db-8d28-45ec-8b87-f57b4b40c92e" class="">By understanding these concepts, designers can effectively create, simulate, and validate complex integrated circuits for a wide range of applications.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
